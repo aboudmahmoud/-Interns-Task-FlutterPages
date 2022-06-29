@@ -37,12 +37,12 @@ class _MyAppState extends State<MyApp> {
           //its Class not Comppant like SkipButton
           // Why ? mmm I thought it will be batter if use class in case we want change type of widget like if its stales or other
           ComarialSlider(),
-        ButtonHandMade(context,"GetStarted",(v){
+        ButtonHandMade(context,getStatred,(v){
           return Login();
         }),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ActionTextScreenCommponets(),
+            child: ActionTextScreenCommponets(Donthave, Rgsterhere),
           )
 
         ],

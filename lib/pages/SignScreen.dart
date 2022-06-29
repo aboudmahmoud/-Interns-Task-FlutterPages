@@ -1,53 +1,51 @@
+import 'package:assigmantone/Consatns/constans.dart';
 import 'package:assigmantone/pages/RegterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 
 import '../CompantsTouse/Compants.dart';
+
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double ScrrenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(transform: Matrix4.translationValues(0.0, -80.0, 0.0)
-                ,child: SvgPicture.asset("Images/logsign.svg",)),
-            Container(transform: Matrix4.translationValues(0.0, -180.0, 0.0),
+            SvgPicture.asset(
+              logsignSvg,
+            ),
+            Container(
+              transform: Matrix4.translationValues(0.0, -100.0, 0),
+              height: ScrrenHeight - 300,
               child: Column(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Align(
-              alignment: Alignment.topLeft,
-                        child: Text('Walcom to fasihon factory')),
+                        alignment: Alignment.topLeft,
+                        child: Text(WalcomeMessage)),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: HadderPageComappants("Sign In"),
+                    child: HadderPageComappants(SignInMasgee),
                   ),
-                  SizedBox(height: 20,),
-
-
+                  SizedBox(
+                    height: 20,
+                  ),
                   PhoneNumber(),
-
-
-              ButtonHandMade(context,"Sign In",(v){
-                return Regster();
-              }),
-                  Container(transform: Matrix4.translationValues(0.0, -20.0, 0.0),child: Column(
-                    children: [
-                      SvgPicture.asset("Images/OrMessage.svg",),
-                      ActionTextScreenCommponets()
-                    ],
-                  ) ),
-
-
+                  ButtonHandMade(context, SignInMasgee, (v) {
+                    return Regster();
+                  }),
+                  bottomMessage(Donthave, Rgsterhere),
                 ],
               ),
             )
@@ -56,9 +54,4 @@ class Login extends StatelessWidget {
       ),
     );
   }
-
-
-
-
-
 }
